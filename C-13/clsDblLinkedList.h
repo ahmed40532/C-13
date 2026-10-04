@@ -191,6 +191,7 @@ public:
 			delete head;
 			head = NULL;
 			return;
+			_Size--;
 		}
 
 		Node* current = head;
@@ -236,6 +237,9 @@ public:
 			current->next = temp;
 			current = current->prev;
 		}
+
+		if (temp != NULL)
+			head = temp->prev;
 	}
 
 	Node* GetNode(int Index)
@@ -304,6 +308,9 @@ public:
 			return false;
 		}
 	}
+
+
+
 
 };
 
