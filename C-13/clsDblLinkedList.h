@@ -152,7 +152,7 @@ public:
 
 		_Size--;
 	}
-
+	
 	void DeleteFirstNode()
 	{
 
@@ -291,11 +291,18 @@ public:
 
 	}
 
-	void InsertAfter(int Index, T NewValue)
+	bool InsertAfter(int Index, T value)
 	{
 		Node* ItemNode = GetNode(Index);
-
-		InsertAfter(ItemNode, NewValue);
+		if (ItemNode != NULL)
+		{
+			InsertAfter(ItemNode, value);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 };

@@ -2,29 +2,35 @@
 //Mohammed Abu-Hadhoud
 
 #include <iostream>
-#include "clsDblLinkedList.h"
+#include "clsMyQueue.h"
 
 using namespace std;
-
 
 int main()
 {
 
-    clsDblLinkedList <int> MydblLinkedList;
+    clsMyQueue <int> MyQueue;
 
-    MydblLinkedList.InsertAtBeginning(5);
-    MydblLinkedList.InsertAtBeginning(4);
-    MydblLinkedList.InsertAtBeginning(3);
-    MydblLinkedList.InsertAtBeginning(2);
-    MydblLinkedList.InsertAtBeginning(1);
+    MyQueue.push(10);
+    MyQueue.push(20);
+    MyQueue.push(30);
+    MyQueue.push(40);
+    MyQueue.push(50);
 
-    cout << "\nLinked List Contenet:\n";
-    MydblLinkedList.PrintList();
 
-    MydblLinkedList.InsertAfter(2, 500);
+    cout << "\nQueue: \n";
+    MyQueue.Print();
 
-    cout << "\nAfter Updating Item(2): " << "\n";
-    MydblLinkedList.PrintList();
+    cout << "\nQueue Size: " << MyQueue.Size();
+    cout << "\nQueue Front: " << MyQueue.front();
+    cout << "\nQueue Back: " << MyQueue.back();
+
+    MyQueue.pop();
+
+    cout << "\n\nQueue after pop() : \n";
+    MyQueue.Print();
+
+
 
 
 
