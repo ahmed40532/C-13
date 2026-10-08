@@ -2,69 +2,53 @@
 //Mohammed Abu-Hadhoud
 
 #include <iostream>
-#include "clsMyQueueArr.h"
+#include "clsMyString.h"
 
 using namespace std;
 
 int main()
 {
 
-    clsMyQueueArr <int> MyQueue;
+	cout << "\n\n\t\t\t\t\t\t Undo/Redo Project\n\n";
 
-    MyQueue.push(10);
-    MyQueue.push(20);
-    MyQueue.push(30);
-    MyQueue.push(40);
-    MyQueue.push(50);
+	clsMyString S1;
 
+	cout << "\nS1  = " << S1.Value << "\n";
+	S1.Value = "Mohammed";
 
-    cout << "\nQueue: \n";
-    MyQueue.Print();
+	cout << "S1  = " << S1.Value << "\n";
+	S1.Value = "Mohammed2";
 
-    cout << "\nQueue Size: " << MyQueue.Size();
-    cout << "\nQueue Front: " << MyQueue.front();
-    cout << "\nQueue Back: " << MyQueue.back();
+	cout << "S1  = " << S1.Value << "\n";
+	S1.Value = "Mohammed3";
 
-    MyQueue.pop();
+	cout << "S1  = " << S1.Value << "\n";
 
-    cout << "\n\nQueue after pop() : \n";
-    MyQueue.Print();
+	cout << "\n\nUndo: ";
+	cout << "\n__________\n";
 
+	S1.Undo();
+	cout << "\nS1  after undo = " << S1.Value << "\n";
 
-    cout << "\n\n Item(2) : " << MyQueue.GetItem(2);
+	S1.Undo();
+	cout << "S1  after undo = " << S1.Value << "\n";
 
+	S1.Undo();
+	cout << "S1  after undo = " << S1.Value << "\n";
 
-    MyQueue.Reverse();
-    cout << "\n\nQueue after reverse() : \n";
-    MyQueue.Print();
+	cout << "\n\nRedo: ";
+	cout << "\n__________\n";
 
+	S1.Redo();
+	cout << "\nS1  after Redo = " << S1.Value << "\n";
 
-    MyQueue.UpdateItem(2, 600);
-    cout << "\n\nQueue after updating Item(2) to 600 : \n";
-    MyQueue.Print();
+	S1.Redo();
+	cout << "S1  after Redo = " << S1.Value << "\n";
 
+	S1.Redo();
+	cout << "S1  after Redo = " << S1.Value << "\n";
 
-    MyQueue.InsertAfter(2, 800);
-    cout << "\n\nQueue after Inserting 800 after Item(2) : \n";
-    MyQueue.Print();
+	system("pause>0");
 
-
-
-    MyQueue.InsertAtFront(1000);
-    cout << "\n\nQueue after Inserting 1000 at front: \n";
-    MyQueue.Print();
-
-
-    MyQueue.InsertAtBack(2000);
-    cout << "\n\nQueue after Inserting 2000 at back: \n";
-    MyQueue.Print();
-
-
-    MyQueue.Clear();
-    cout << "\n\nQueue after Clear(): \n";
-    MyQueue.Print();
-
-    system("pause>0");
-
-
+	return 0;
 }
