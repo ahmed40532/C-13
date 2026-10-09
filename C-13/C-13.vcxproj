@@ -132,6 +132,7 @@
     <ClInclude Include="clsMyStack.h" />
     <ClInclude Include="clsMyQueueArr.h" />
     <ClInclude Include="clsMyString.h" />
+    <ClInclude Include="clsQueueLine.h" />
     <ClInclude Include="MyStackArr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
